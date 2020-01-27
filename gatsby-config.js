@@ -1,14 +1,15 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
-    author: `Kyle Mathews`,
+    title: `Ryan Chenkie`,
+    author: `Ryan Chenkie`,
     description: `A starter blog demonstrating what Gatsby can do.`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `ryanchenkie`,
     },
   },
   plugins: [
+    `gatsby-plugin-postcss`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -73,8 +74,23 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Inconsolata`,
+            subsets: [`latin`],
+          },
+          {
+            family: `Open Sans`,
+            variants: [`400`, `700`],
+          },
+        ],
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-}
+};
